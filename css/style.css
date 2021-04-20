@@ -1,0 +1,99 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+    background: url(/img/bg.webp) ;
+    background-size: cover;
+    background-position:center center;
+    position: relative;
+    width: 100%;
+    height:100vh;
+    animation: bg 500s linear infinite;
+}
+
+@keyframes bg {
+    0%{
+
+    }
+
+    50%{
+        background-position: 10000px;
+    }
+
+
+    100%{
+        background-position: 10000px;
+    }
+}
+.road{
+    position: absolute;
+    top:75%;
+    left:0%;
+    width:1330px;
+    height:130px;
+    background: #000;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform:perspective(200px) rotateX(20deg);
+}
+
+.road::before{
+    content: "";
+    position: absolute;
+    top:50%;
+    left:0%;
+    width:100%;
+    height:10px;
+    background: linear-gradient(90deg, #fff 0%, 
+                #fff 70%, #000 70%, #000 100%) ;
+    background-size: 200px;
+    transform:translateY(-50%);
+    animation: road 5s linear infinite
+}
+
+@keyframes road{
+    0%{
+        background-position:0px;
+    }
+
+    100%{
+        background-position:200px;
+    }
+}
+
+.road::after{
+    content: "";
+    position: absolute;
+    bottom:-30px;
+    width:100%;
+    height:30px;
+    background: #000;
+    transform-origin: top;
+    transform:perspective(1200px) rotateX(-20deg);
+}
+
+img{
+    position: absolute;
+    top: 50%;
+    right:0;
+    height:300px;
+    animation: moonwalk 10s linear infinite;
+}
+
+@keyframes moonwalk{
+    0%{
+
+    }
+
+    100%{
+       transform: translateX(-1000px); 
+    }
+}
+
+audio{
+    outline: none;
+    display:none;
+}
